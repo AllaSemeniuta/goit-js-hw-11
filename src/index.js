@@ -13,15 +13,6 @@ const options = {
   threshold: 1,
 };
 
-// const { height: cardHeight } = document
-//   .querySelector('.gallery')
-//   .firstElementChild.getBoundingClientRect();
-
-// window.scrollBy({
-//   top: cardHeight * 2,
-//   behavior: 'smooth',
-// });
-
 const refs = {
   searchForm: document.querySelector('.search-form'),
   galleryList: document.querySelector('.gallery'),
@@ -35,7 +26,6 @@ const observer = new IntersectionObserver(observerCallback, options);
 
 function onSubmit(evt) {
   evt.preventDefault();
-  console.log('hello');
   pictureApiService.searchValue = evt.srcElement.searchQuery.value
     .toLowerCase()
     .trim();
@@ -59,7 +49,6 @@ function renderMarkup(array) {
     observer.unobserve(refs.guard);
     return;
   }
-  // const resp = array.map(image => galleryCard(image)).join(' ');
   refs.galleryList.insertAdjacentHTML('beforeend', galleryCard(array));
   observer.observe(refs.guard);
 
@@ -75,26 +64,9 @@ function observerCallback(entries) {
       pictureApiService
         .getImage()
         .then(data => {
-          console.log(data);
           renderMarkup(data);
         })
         .catch(console.log);
     }
   });
 }
-
-const { height: cardHeight } = document.querySelector('.gallery');
-
-console.log({ height: cardHeight });
-// .firstElementChild.getBoundingClientRect();
-
-window.scrollBy({
-  top: cardHeight * 2,
-  behavior: 'smooth',
-});
-
-// 3. Плавний скрол
-
-//Розмітка
-// зробити стрілочку вгору
-// подивитись на відловку помилок

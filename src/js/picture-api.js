@@ -9,7 +9,6 @@ export default class PictureService {
   }
 
   async getImage() {
-    console.log(this.searchValue);
     const KEY = '30780991-15ded2d5552668bc218cc390e';
     const baseUrl = 'https://pixabay.com/api/';
     const params = {
@@ -28,7 +27,6 @@ export default class PictureService {
       this.maxPage = Math.ceil(
         response.data.totalHits / params.params.per_page
       );
-      console.log(this.maxPage);
 
       if (!response.data.hits.length) {
         Notiflix.Notify.failure(
