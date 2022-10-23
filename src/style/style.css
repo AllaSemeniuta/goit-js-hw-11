@@ -72,11 +72,21 @@
   height: 180px;
   overflow: hidden;
 }
+
 .info {
   display: flex;
   height: 30px;
+  padding: 5px;
 }
-.info-item {
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.info-item,
+.info-value {
   margin: 0 auto;
   text-align: center;
   font-size: 11px;
