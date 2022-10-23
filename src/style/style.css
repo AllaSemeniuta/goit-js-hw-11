@@ -19,7 +19,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vp;
   height: 80px;
   background-color: var(--primary-bgc);
   margin-bottom: 15px;
