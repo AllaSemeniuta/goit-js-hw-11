@@ -17,13 +17,6 @@ button {
   cursor: pointer;
 }
 
-body {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 a {
   color: currentColor;
 }
