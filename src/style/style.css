@@ -56,9 +56,12 @@
 }
 .gallery {
   display: flex;
+  justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   gap: var(--typical-gap);
-  margin-right: calc(-1 * var(--typical-gap));
+  /* margin-right: calc(-1 * var(--typical-gap)); */
+
   /* flex-basis: calc(100% / 4- var(--typical-gap));
   margin-right: var(--typical-gap);
   background-color: #fff; */
